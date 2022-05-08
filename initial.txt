@@ -1,2 +1,2 @@
 This is the first step in the gooby.net project!
-Hello Gooby! This is the second line!
+Hello Gooby! This is the second step!
