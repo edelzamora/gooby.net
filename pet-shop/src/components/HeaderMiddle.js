@@ -7,8 +7,10 @@ import {
   Burger,
   Paper,
   Transition,
+  Anchor,
 } from "@mantine/core";
 import { useBooleanToggle } from "@mantine/hooks";
+import { Link } from "react-router-dom";
 
 const HEADER_HEIGHT = 60;
 
@@ -97,45 +99,47 @@ export default function HeaderMiddle(props) {
   const { classes, cx } = useStyles();
 
   const items = props.links.links.map((link) => (
-    <a
+
+    <Anchor
       key={link.label}
-      href={link.link}
+      component={Link} to={link.link}
       className={cx(classes.link, {
         [classes.linkActive]: active === link.link,
       })}
-      onClick={(event) => {
-        event.preventDefault();
+      onClick={() => {
+        
         setActive(link.link);
         toggleOpened(false);
       }}
     >
-      {link.label}
-    </a>
-  ));
+      
+        {link.label}
+      </Anchor>
+      ));
 
-  return (
-    <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
-      <Container className={classes.header}>
-        <h1>PETSHOP logo</h1>
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
+      return (
+      <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+        <Container className={classes.header}>
+          <h1>PETSHOP logo</h1>
+          <Group spacing={5} className={classes.links}>
+            {items}
+          </Group>
 
-        <Burger
-          opened={opened}
-          onClick={() => toggleOpened()}
-          className={classes.burger}
-          size="sm"
-        />
+          <Burger
+            opened={opened}
+            onClick={() => toggleOpened()}
+            className={classes.burger}
+            size="sm"
+          />
 
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
-              {items}
-            </Paper>
-          )}
-        </Transition>
-      </Container>
-    </Header>
-  );
+          <Transition transition="pop-top-right" duration={200} mounted={opened}>
+            {(styles) => (
+              <Paper className={classes.dropdown} withBorder style={styles}>
+                {items}
+              </Paper>
+            )}
+          </Transition>
+        </Container>
+      </Header>
+      );
 }

@@ -1,20 +1,16 @@
 export default {
   links: [
     {
-      link: "/about",
-      label: "Features",
+      link: "/login",
+      label: "Log in",
     },
     {
-      link: "/pricing",
-      label: "Pricing",
+      link: "/signup",
+      label: "Sign Up",
     },
     {
-      link: "/learn",
-      label: "Learn",
-    },
-    {
-      link: "/community",
-      label: "Community",
+      link: "/viewpets",
+      label: "View Pets",
     },
   ],
 };

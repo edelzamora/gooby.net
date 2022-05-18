@@ -10,7 +10,7 @@ import {
   Button,
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
-export default function Signup() {
+export default function login() {
   return (
     <div>
         <Container size={420} my={40}>
@@ -18,22 +18,20 @@ export default function Signup() {
         align="center"
         sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
       >
-        Create an Account
+        Log in to Pet Shop!
       </Title>
       <Text color="dimmed" size="sm" align="center" mt={5}>
-        Have an account already?{' '}
-        <Anchor component={Link} to ='/login' size="sm" >
-          Log In
+        Do not have an account yet?{' '}
+        <Anchor component={Link} to ='/signup' size="sm" >
+          Sign Up
         </Anchor>
       </Text>
 
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-      <TextInput label="First Name" placeholder="John" required />
-      <TextInput label="Last Name" placeholder="Doe" required />
-        <TextInput label="Email" placeholder="john@email.com" required />
+        <TextInput label="Email" placeholder="you@mantine.dev" required />
         <PasswordInput label="Password" placeholder="Your password" required mt="md" />
         <Button fullWidth mt="xl">
-          Sign Up
+          Log in
         </Button>
       </Paper>
     </Container>
