@@ -4,7 +4,9 @@ import SharedLayout from "./pages/SharedLayout";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Error from "./pages/Error"
+import Error from "./pages/Error";
+import Cats from "./pages/Cats";
+import ViewPets from "./components/ViewPets";
 
 export default function App() {
   return (
@@ -15,7 +17,9 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="signup" element={<Signup />} />
             <Route path="login" element={<Login />} />
-            <Route path="*" element={<Error />}/>
+            <Route path="viewpets" element={<ViewPets />} />
+            <Route path="viewpets/cats" element={<Cats />} />
+            <Route path="*" element={<Error />} />
           </Route>
         </Routes>
       </BrowserRouter>
