@@ -73,10 +73,7 @@ export default function ViewPets() {
   return (
     <Card withBorder radius="md" className={classes.card}>
       <Group position="apart">
-        <Text className={classes.title}>Services</Text>
-        <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
-          + 21 other services
-        </Anchor>
+        <Text className={classes.title}>Pet Categories</Text>
       </Group>
       <SimpleGrid cols={3} mt="md">
         {items}
