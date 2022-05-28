@@ -11,13 +11,14 @@ import {
 
 import { FaDog, FaCat, FaKiwiBird, FaHorse } from "react-icons/fa";
 import { GiRattlesnake } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const mockdata = [
-  { title: "Dog", color: "violet", icon: FaDog },
-  { title: "Cat", color: "indigo", icon: FaCat },
-  { title: "Horse", color: "blue", icon: FaHorse },
-  { title: "Bird", color: "green", icon: FaKiwiBird },
-  { title: "Reptile", color: "green", icon: GiRattlesnake },
+  { title: "Dog", color: "violet", icon: FaDog, link: "dogs" },
+  { title: "Cat", color: "indigo", icon: FaCat, link: "cats" },
+  { title: "Horse", color: "blue", icon: FaHorse, link: "horses" },
+  { title: "Bird", color: "green", icon: FaKiwiBird, link: "birds" },
+  { title: "Reptile", color: "green", icon: GiRattlesnake, link: "reptiles" },
 ];
 
 const useStyles = createStyles((theme) => ({
@@ -56,7 +57,12 @@ export default function ViewPets() {
   const { classes, theme } = useStyles();
 
   const items = mockdata.map((item) => (
-    <UnstyledButton key={item.title} className={classes.item}>
+    <UnstyledButton
+      component={Link}
+      to={item.link}
+      key={item.title}
+      className={classes.item}
+    >
       <item.icon color={theme.colors[item.color][6]} size={32} />
       <Text size="xs" mt={7}>
         {item.title}

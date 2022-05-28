@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Error from "./pages/Error";
-import Cats from "./pages/Cats";
+import SinglePet from "./pages/SinglePet";
 import ViewPets from "./components/ViewPets";
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="login" element={<Login />} />
             <Route path="viewpets" element={<ViewPets />} />
-            <Route path="viewpets/cats" element={<Cats />} />
+            <Route path="viewpets/:pet" element={<SinglePet />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>
